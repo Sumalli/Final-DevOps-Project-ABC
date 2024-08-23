@@ -22,7 +22,7 @@
         image: mallieswari/abc-technologies-latest-with-ansible
         state: started
         ports:
-          - 8090:8080
+          - 8000:8080
         # restart: true
       register: build_container_out
 
