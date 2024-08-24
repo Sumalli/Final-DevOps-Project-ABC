@@ -13,7 +13,8 @@
         source: build
       register: build_image_out
 
-    - debug:
+    - name: Display build image output
+      debug:
         var: build_image_out
 
     - name: Start a container
@@ -22,21 +23,17 @@
         image: mallieswari/abc-technologies-latest-with-ansible
         state: started
         ports:
-          - 8090:8080
-        # restart: true
+          - "8000:8080"
       register: build_container_out
 
-
-    - debug:
+    - name: Display container start output
+      debug:
         var: build_container_out
 
+    - name: Deploying to Kubernetes
+      command: "kubectl --kubeconfig=/home/minikubeuser/.kube/config apply -f /root/Final-DevOps-Project-ABC/deployment.yaml"
+      register: out
 
-
-    # - name: Deploying to Kubernetes
-    #- name: Create a Deployment by reading the definition from a local file
-      #command: "kubectl --kubeconfig=/home/minikubeuser/.kube/config apply -f /root/Jenkins/workspace/KubernetesPipeline-CICD/deployment.yaml"
-        #register: out
-
-        #  - debug:
-        #var: out
-
+    - name: Display Kubernetes deployment output
+      debug:
+        var: out
