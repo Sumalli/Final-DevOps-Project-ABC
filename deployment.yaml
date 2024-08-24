@@ -36,5 +36,5 @@ spec:
   ports:
   - port: 80        # Cluster port
     targetPort: 8080 # Container port
-    nodePort: 35000  # NodePort (optional, Kubernetes will assign one if not specified)#
+    nodePort: 32000  # NodePort (optional, Kubernetes will assign one if not specified)#
 
