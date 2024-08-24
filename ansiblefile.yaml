@@ -31,7 +31,7 @@
         var: build_container_out
 
     - name: Deploying to Kubernetes
-      command: "kubectl --kubeconfig=/home/minikubeuser/.kube/config apply -f /root/Final-DevOps-Project-ABC/deployment.yaml"
+      command: "kubectl --kubeconfig=/root/.kube/config apply -f /root/Final-DevOps-Project-ABC/deployment.yaml"
       register: out
 
     - name: Display Kubernetes deployment output
