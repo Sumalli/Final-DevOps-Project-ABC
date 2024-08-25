@@ -28,9 +28,9 @@
     - debug:
         var: build_container_out
 
-    - name: Deploying to Kubernetes
-      command: kubectl --kubeconfig=/root/.kube/config apply -f /root/Final-DevOps-Project-ABC/deployment.yaml --validate=false
-      register: out
+   # - name: Deploying to Kubernetes
+    #  command: kubectl --kubeconfig=/root/.kube/config apply -f /root/Final-DevOps-Project-ABC/deployment.yaml --validate=false
+    #  register: out
 
-    - debug:
-        var: out
+   # - debug:
+     #   var: out
